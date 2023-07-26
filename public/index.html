@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    </meta>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    </meta>
+    <title>Express CRUD</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    </meta>
+    <link rel="shortcut icon" href="https://share.ftimg.com/aff/flamingtext/2019/03/28/flamingtext__26068056772646949.png">
+    <!-- icons cdn -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css">
+    </link>
+    <!-- css -->
+    <link rel="stylesheet" type="text/css" href="main.css">
+    </link>
+    <!-- Fonts -->
+	<link href="https://fonts.googleapis.com/css2?family=Comforter&display=swap" rel="stylesheet">
+    <!-- bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+</head>
+
+<body>
+    
+    <row class="space-around">
+        <h1 style="color: #fff;    
+        margin: 10px;
+        font-size: 120px;
+        font-family: 'Comforter', cursive;
+        position: relative;
+        text-shadow: red 2px 2px 2px;
+        background-color: transparent;"> Express CRUD</h1>
+        
+    </row>
+
+    <form onsubmit="createPost(event)">
+        <h2 style="color: #fff; font-size: 2em;">Create New Post</h2>
+        <label style="color: white;" for="title">Title</label>
+        <input required id="title" type="text" placeholder="Enter Title" class="input">
+        <label style="color: white;" for="text">Text</label>
+        <textarea required id="text" type="text" placeholder="Enter Text" class="input"></textarea>
+        <button  type="submit" class="button">Post</button>
+    </form>
+    <h2 style="color: #fff; font-size: 2em;">Posts</h2>
+    <div class="result"></div>
+
+ 
+
+   
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.4/moment.min.js"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.js"></script>
+    
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+   
+    <script src="./main.js"></script>
+   
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>
