@@ -1,28 +1,28 @@
- 
 * {
-   
+    font-family: "Josefin Sans", sans-serif;
     font-weight: bold!important;
     outline: none!important;
-    cursor: url('./cursor-24.png'),auto !important;
+    cursor: url('https://github.com/ahmedraza41190/CRUD-App/blob/main/public/cursor-24.png?raw=true'),auto !important;
 }
 
 body {
-    background-image: url(https://raw.githubusercontent.com/ahmedraza41190/ToDo-Application/main/bayc-mutant-hero.webp); 
-    background-repeat: repeat;
-    background-position: center;
+    background-image: url(https://raw.githubusercontent.com/ahmedraza41190/ToDo-Application/main/bayc-mutant-hero.webp);
+    color: #fff!important;
     display: flex;
     flex-direction: column;
     justify-content: right;
     align-items: center;
-    row-gap: 3em!important;
+    row-gap: 2em!important;
     padding: 2em 1em;
     margin: 0em;
     width: 100vw;
     height: 100vh;
-    scroll-behavior: smooth;
 }
 
-
+.green {
+    color: #fff;
+    
+}
 
 i,
 a,
@@ -36,25 +36,7 @@ h6 {
     margin: 0em!important;
 }
 
-.drop-down {
-    background-color: #fff;
-    color: #212121;
-    border: 0px;
-    padding: 0em;
-    margin: 0em;
-}
 
-.dropdown-menu.show {
-    background-color: #fff;
-    color: #212121;
-    border: 1px solid #212121;
-}
-
-.drop-down-options {
-    /* background-color: #fff; */
-    color: #212121;
-    border: 0px;
-}
 
 .list {
     width: 8em;
@@ -65,9 +47,10 @@ h6 {
 
 a,
 .list>a {
-    color: #212121;
+    color: #fff;
     text-decoration: none!important;
-    margin: 0.3em!important;
+    margin: 0.5em 0.3em!important;
+    /* width: fit-content; */
 }
 
 .icon {
@@ -98,16 +81,34 @@ form {
 .button {
     color: #fff;
     background-color: #212121;
-    width: 5em;
-    height: 2.5em;
+    width: 7em;
+    height: 3.5em;
+    border: 0px;
+    border-radius: 15px;
+    font-size: 1em;
+    margin-left: auto;
+    margin-top: 2em;
+}
+
+.button:active {
+    background-color: #15182b;
+    color: #b6d1fd;
+}
+
+.logout {
+    color: #fff;
+    background-color: #212121;
+    width: 7em;
+    height: 3.5em;
     border: 0px;
     border-radius: 15px;
     font-size: 1em;
     margin-left: auto;
 }
 
-.button:active {
-    background-color: #313131;
+.logout:active {
+    background-color: #15182b;
+    color: #b6d1fd;
 }
 
 .center {
@@ -126,13 +127,15 @@ form {
     border-radius: 10px;
     width: 10em;
     height: 3em;
-    color: #212121;
+    color: #15182b;
     background-color: #fff;
-    width: 90%;
+    width: 100%;
+    border-top-right-radius: 0px;
+    border-bottom-right-radius: 0px;
 }
 
 ::placeholder {
-    color: #aaa;
+    color: #888;
 }
 
 #text,
@@ -149,8 +152,8 @@ form {
 #text::-moz-scrollbar-thumb {
     width: 4px!important;
     border-radius: 10px;
-    /* -webkit-box-shadow: inset 0 0 6px #212121; */
-    background-color: #212121;
+    /* -webkit-box-shadow: inset 0 0 6px #15182b; */
+    background-color: #15182b;
     border: none;
 }
 
@@ -173,8 +176,8 @@ form {
 #text::-webkit-scrollbar-thumb {
     width: 4px!important;
     border-radius: 10px;
-    /* -webkit-box-shadow: inset 0 0 6px #212121; */
-    background-color: #212121;
+    /* -webkit-box-shadow: inset 0 0 6px #15182b; */
+    background-color: #15182b;
     border: none;
 }
 
@@ -186,12 +189,21 @@ form {
     padding: 0em;
 }
 
+.space-around>p {
+    color: #b6d1fd;
+}
+
+.space-around>i {
+    color: #fff;
+}
+
 .result {
     display: flex;
     justify-content: center;
     gap: 1em;
     flex-wrap: wrap;
     width: 100%;
+    /* border: 2px solid #15182b; */
     padding: 1em 0em;
 }
 
@@ -201,24 +213,14 @@ form {
     /* justify-content: right; */
     flex-direction: column;
     align-items: center;
-    padding: 1.5em;
+    padding: 0.8em 1.5em;
     row-gap: 1em;
     width: 15em!important;
     /* height: fit-content!important; */
-    border: 2px dashed #212121;
-    background-color: #212121;
-    color: #fff;
-    animation-name: shine;
-    animation-duration: 2s;
-    animation-iteration-count: infinite;
-}
-@keyframes shine{
-    0%,100%{
-        box-shadow: 0px 0px 32px -12px rgba(246, 180, 0, .5);
-    }
-    50%{
-        box-shadow: 0px 0px 32px 3px rgba(246, 180, 0, .5);
-    }
+    border: 2px solid #fff;
+    background-color: #1f273c;
+    border-top-left-radius: 20px;
+    border-bottom-left-radius: 20px;
 }
 
 .result>.post>p {
@@ -233,7 +235,8 @@ form {
 }
 
 .regards {
-    font-size: 0.7em;
+    font-size: 0.6em;
+    color: #fff;
 }
 
 .scroll {
@@ -242,48 +245,51 @@ form {
     overflow-y: auto;
     overflow-x: auto;
     width: 100%;
+    font-size: 0.6em;
+    line-height: 2em;
 }
 
 .scroll::-moz-scrollbar {
     height: 2px;
     width: 2px;
     border-radius: 10px;
-    background-color: #fff;
+    background-color: #1f273c;
 }
 
 .scroll::-moz-scrollbar-thumb {
     height: 2px;
     width: 2px!important;
     border-radius: 10px;
-    /* -webkit-box-shadow: inset 0 0 6px #212121; */
-    background-color: #212121;
+    /* -webkit-box-shadow: inset 0 0 6px #15182b; */
+    background-color: #fff;
     border: none;
 }
 
 .scroll::-moz-scrollbar-track {
-    background-color: #fff;
+    background-color: #1f273c;
     border: none;
 }
 
 .scroll::-webkit-scrollbar-track {
-    background-color: #fff;
+    background-color: #1f273c;
     border: none;
 }
 
 .scroll::-webkit-scrollbar {
     height: 2px;
     width: 2px;
-    background-color: #fff;
+    background-color: #1f273c;
 }
 
 .scroll::-webkit-scrollbar-thumb {
     height: 2px;
     width: 2px!important;
-    background-color: #212121;
+    background-color: #fff;
     border: none;
 }
 
 .scrollH {
+    color: #b6d1fd;
     overflow-y: hidden;
     overflow-x: auto;
     width: 100%;
@@ -299,3 +305,6 @@ form {
     display: none;
 }
 
+.noPostMessage {
+    margin: auto!important;
+}
