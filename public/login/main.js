@@ -1,20 +1,3 @@
-// show Password
-function showPassword(event) {
-    event.target.className = "bi bi-eye-slash";
-    event.target.previousElementSibling.type = "text";
-    event.target.removeEventListener('click', showPassword);
-    event.target.addEventListener('click', hidePassword);
-}
-
-// hide password
-function hidePassword(event) {
-    event.target.className = "bi bi-eye";
-    event.target.previousElementSibling.type = "password";
-    event.target.removeEventListener('click', hidePassword);
-    event.target.addEventListener('click', showPassword);
-}
-
-
 
 function login(event) {
     event.preventDefault()
@@ -64,7 +47,7 @@ function login(event) {
                 icon: 'error',
                 title: 'Error in logging in',
                 text: "Please enter correct email or password",
-                timer: 2500,
+                timer: 1000,
                 showConfirmButton: false
             });
         })

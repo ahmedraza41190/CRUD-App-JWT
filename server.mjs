@@ -1,28 +1,34 @@
 import express from 'express';
+import cors from 'cors';
 import path from 'path';
 import jwt from 'jsonwebtoken';
+import cookieParser from 'cookie-parser'
 import 'dotenv/config'
 const __dirname = path.resolve();
 
 import authRouter from './routes/auth.mjs'
 import postRouter from './routes/post.mjs'
-import cookieParser from 'cookie-parser'
-import { decode } from 'punycode';
+
+
+
+
 
 const app = express();
 app.use(express.json()); // body parser
 app.use(cookieParser()); // cookie parser
-app.use('/login', express.static(path.join(__dirname, 'public/login')))
-app.use('/signup', express.static(path.join(__dirname, 'public/signup')))
+// app.use(cors())
 
+// /api/v1/login
 app.use("/api/v1", authRouter)
 
+app.use("/static", express.static(path.join(__dirname, 'static')))
+app.use(express.static(path.join(__dirname, 'public')))
 
-app.use((req, res, next) => {
+
+app.use((req, res, next) => { // JWT
     console.log("cookies: ", req.cookies);
 
     const token = req.cookies.token;
-
     try {
         const decoded = jwt.verify(token, process.env.SECRET);
         console.log("decoded: ", decoded);
@@ -37,15 +43,17 @@ app.use((req, res, next) => {
         next();
 
     } catch (err) {
-        res.status(401).send(`
-           Invalid
-            `)
+        res.status(401).send({ message: "invalid token" })
     }
+
 
 })
 
-app.use("/api/v1", postRouter)
-app.use(express.static(path.join(__dirname, 'public')))
+app.use("/api/v1", postRouter) // Secure api
+
+
+
+
 
 const PORT = process.env.PORT || 3000;
 app.listen(PORT, () => {

@@ -14,8 +14,7 @@
 /* body */
 
 body {
-    background-image: url(https://raw.githubusercontent.com/ahmedraza41190/ToDo-Application/main/bayc-mutant-hero.webp);
-    color: #fff!important;
+    background: white;
     display: flex;
     flex-direction: column;
     /* justify-content: center; */
@@ -25,7 +24,16 @@ body {
     row-gap: 2em;
     width: 100vw;
     height: 100vh;
-    padding: 2em 1em!important;
+    padding: 0em 1em!important;
+}
+
+.navbar{
+    width: 100vw;
+    box-shadow: 0 2px 4px 0 rgba(0,0,0,0.5);
+}
+
+.navbar-a{
+    display: flex;
 }
 
 p,
@@ -177,10 +185,9 @@ a,
 /* text align */
 
 .center {
-    width: 100%;
+   
     text-align: center;
     margin: 0px!important;
-    
 }
 
 .left {
@@ -202,12 +209,17 @@ a,
     color: #15182b;
     background-color: #fff;
     border: none;
+    outline: none;
     border-radius: 10px;
     padding: 0.5em!important;
 }
 
 ::placeholder {
     color: #aaa;
+}
+
+.input:focus{
+    border: 3px solid #15182b;
 }
 
 

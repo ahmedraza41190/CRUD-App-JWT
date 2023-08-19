@@ -21,7 +21,6 @@ function signup(event) {
     let lastName = document.getElementById("last-name").value;
     let email = document.getElementById("email-signup").value;
     let password = document.getElementById("password-signup").value;
-    let confirmPassword = document.getElementById("password-signup-repeat").value;
     let message = document.querySelector(".validationMessage");
 
     if (!email.endsWith("@gmail.com")) {
@@ -35,23 +34,9 @@ function signup(event) {
         firstName.trim() === '' ||
         lastName.trim() === '' ||
         email.trim() === '' ||
-        password.trim() === '' ||
-        confirmPassword.trim() === ''
-        // || firstName.length > 8 ||
-        // lastName.length > 8 ||
-        // password.length > 8 ||
-        // confirmPassword.length > 8 ||
-        // firstName.length < 4 || lastName.length < 4 ||
-        // password.length < 4 || confirmPassword.length < 4
+        password.trim() === '' 
     ) {
         message.innerText = `Please fill required fields`;
-        message.style.display = "block";
-        message.style.color = "#e55865";
-        return;
-    }
-
-    if (password !== confirmPassword) {
-        message.innerText = `Password doesn't match`;
         message.style.display = "block";
         message.style.color = "#e55865";
         return;
@@ -61,13 +46,10 @@ function signup(event) {
             firstName: firstName,
             lastName: lastName,
             email: email,
-            password: password,
-            confirmPassword: confirmPassword
+            password: password
         })
         .then(function(response) {
             message.style.display = "none"
-                // console.log("signup successful");
-                // console.log(response.data);
             Swal.fire({
                 icon: 'success',
                 title: 'Signup Successful',
@@ -93,5 +75,4 @@ function signup(event) {
     document.getElementById("last-name").value = "";
     document.getElementById("email-signup").value = "";
     document.getElementById("password-signup").value = "";
-    document.getElementById("password-signup-repeat").value = "";
 }
